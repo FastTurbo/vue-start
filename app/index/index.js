@@ -11,3 +11,4 @@ new Vue({
 
 console.log('hello world!This is from git branch test\'s commit!')
 console.log('If I want coomit file to github,I must merge code to master branch,then commit and push!')
+console.log('A dev branch update.I can do this at dev branch.')
