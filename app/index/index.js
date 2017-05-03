@@ -9,4 +9,4 @@ new Vue({
     components:{Favlist}
 })
 
-console.log('hello world!');
+console.log('hello world!This is from git branch test\'s commit!')
