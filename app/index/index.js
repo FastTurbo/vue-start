@@ -9,4 +9,4 @@ new Vue({
     components:{Favlist}
 })
 
-console.log('hello world!My name is Tian Pengfei!');
+console.log('hello world!');
