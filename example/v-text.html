@@ -10,13 +10,15 @@
 <hr>
 <div id="app">
     <span>{{message}}</span>=<span v-text="message"></span>
+    <span v-html="dodo"></span>
 
 </div>
 <script>
     var app = new Vue({
         el:'#app',
         data:{
-            message:'Hello world!'
+            message:'Hello world!',
+            dodo:'<h2>Hello world!</h2>'
         }
     })
 </script>
