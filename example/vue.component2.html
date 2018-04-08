@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue组件</title>
+    <script src="../assets/vue.js"></script>
+</head>
+<body>
+<h1>vue组件实例</h1>
+<hr>
+<div id="app">
+    {{message}}
+    <parent></parent>
+    <component :is="comp"></component>
+    <p><button @click="change">change</button></p>
+</div>
+<script>
+    var compA = {
+        template:`<div style="color:red">这是componentA组件</div>`
+    }
+    var compB = {
+        template:`<div style="color:green;">这是componentB组件</div>`
+    }
+    var compC = {
+        template:`<div style="color:blue;">这是componentC组件</div>`
+    }
+
+    var child = {
+        template:`<div style="color:red;">这是一个child组件</div>`
+    }
+    var parent = {
+        template:`<div >
+            <p style="color:green;">这是一个父组件</p>
+            <child></child>
+        </div>`,
+        components:{
+            'child':child
+        }
+    }
+    var app = new Vue({
+        el:'#app',
+        data:{
+            message:'Hello world!',
+            comp:'compA'
+        },
+        components:{
+            'parent':parent,
+            'compA':compA,
+            'compB':compB,
+            'compC':compC,
+        },
+        methods:{
+            change:function(){
+                if(this.comp === 'compA'){
+                    this.comp = 'compB'
+                }else if(this.comp === 'compB'){
+                    this.comp = 'compC'
+                }else{
+                    this.comp = 'compA'
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

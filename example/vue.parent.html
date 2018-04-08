@@ -11,6 +11,7 @@
 <div id="app">
     {{message}}
     <component :is="who"></component>
+    <p><button @click="change">change</button></p>
 </div>
 <script>
     var child = {
@@ -49,6 +50,17 @@
             'componentA':componentA,
             'componentB':componentB,
             'componentC':componentC
+        },
+        methods:{
+            change:function(){
+                if(this.who === 'componentA'){
+                    this.who = 'componentB'
+                }else if(this.who === 'componentB'){
+                    this.who = 'componentC'
+                }else{
+                    this.who = 'componentA'
+                }
+            }
         }
     })
 </script>
