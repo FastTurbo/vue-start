@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello world</title>
+    <style>
+        .classA{color:red;}
+        .classB{font-size:150%;}
+    </style>
+    <script src="../assets/vue.js"></script>
+</head>
+<body>
+<h1>Hello world</h1>
+<hr>
+<div id="app">
+    {{message}}
+    <div v-bind:style="style" >aaa</div>
+    <a :href="webUrl" target="_blank">ddd</a>
+    <div :class="className">绑定CLass</div>
+    <hr>
+    <div>
+        <input type="checkbox" id="classA" value="classA" v-model="className">
+        <label for="classA">classA</label>
+        <input type="checkbox" id="classB" value="classB" v-model="className">
+        <label for="classB">classB</label>
+    </div>
+
+</div>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            message:'Hello world!',
+            style:'color:red;',
+            webUrl:'http://jspang.com',
+            className:[],
+            isOk:false,
+            classA:'classA',
+            classB:'classB'
+        }
+    })
+</script>
+</body>
+</html>
