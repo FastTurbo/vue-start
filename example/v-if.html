@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-if实例</title>
+    <script src="../assets/vue.js"></script>
+</head>
+<body>
+    <h1>v-if & v-else & v-show</h1>
+    <hr>
+    <div id="app">
+       <!-- <div v-if="isLogin">你好，tianpf</div>
+        <div v-else>你好，请登录</div>-->
+        <div v-show="isLogin">你好，tianpf</div>
+    </div>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                isLogin:true
+            }
+        })
+
+    </script>
+</body>
+</html>
