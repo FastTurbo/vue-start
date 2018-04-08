@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-pre</title>
+    <script src="../assets/vue.js"></script>
+</head>
+<body>
+<h1>v-pre & v-cloak & v-once实例</h1>
+<hr>
+<div id="app">
+    <h3>v-pre实例</h3>
+    <div v-pre>
+        {{message}}
+    </div>
+    <h3>v-cloak实例</h3>
+    <div v-cloak>v-cloaks渲染完成后才显示</div>
+    <div v-once>{{message}}</div>
+    <div>
+
+        <input type="text" v-model="message">
+        <p>{{message}}</p>
+    </div>
+</div>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            message:'Hello world!'
+        }
+    })
+</script>
+</body>
+</html>
