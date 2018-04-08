@@ -2,20 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello world</title>
+    <title>vue生命周期</title>
     <script src="../assets/vue.js"></script>
 </head>
 <body>
-<h1>Hello world</h1>
+<h1>vue生命周期实例</h1>
 <hr>
 <div id="app">
-    {{message}}
+    {{count}}
+    <p><button @click="add">add</button></p>
 </div>
 <script>
     var app = new Vue({
         el:'#app',
         data:{
-            message:'Hello world!'
+            count:1
+        },
+        methods:{
+            add:function(){
+                this.count++
+            }
+        },
+        beforeCreate:function(){
+            console.log('1-beforeCreate:创建之前进行')
+        },
+        created:function(){
+            console.log('2-created:创建完成进行')
+        },
+        beforeMount:function(){
+            console.log('3-beforeMount 挂在之前')
+        },
+        mounted:function(){
+            console.log('4-mounted:挂载之后')
+        },
+        beforeUpdate:function(){
+            console.log('5-before:更新之前')
+        },
+        updated:function(){
+            console.log('6-updated:更新完成')
         }
     })
 </script>

@@ -20,3 +20,8 @@
     update:被绑定元素所在的模版更新时使用
     componentupdate更新完成时使用
     unbind:在解绑时使用
+    
+    template:
+    1 在选项中添加模版：
+    2 在标签里面建立模版,使用选项指定到当前template标签
+    3 使用script标签建立模版
