@@ -9,25 +9,22 @@
 <h1>vue template模版实例</h1>
 <hr>
 <div id="app">
-    {{message}}
-
 </div>
-<template id="dd2">
-    <h2 style="color:red;">我是template标签模版</h2>
+<template id="temp1">
+    <h2 style="color:yellowgreen">这里是template标签模版</h2>
 </template>
-<script type="x-template" id="dd3">
-    <h2 style="color:red;">我是script标签模版</h2>
+<script type="x-template" id="temp2">
+    <h2 style="color:red;">这里是script标签模板</h2>
 </script>
 <script>
     var app = new Vue({
         el:'#app',
-        data:{
-            message:'Hello world!'
-        },
-        template:'#dd3'
-        /*template:`
-            <h2 style="color:red;">我是选项模版</h2>
-        `*/
+        template:'#temp2'
+
+        //    `
+         //   <h2 style="color:green">这里是选项模版</h2>
+       // `
+
     })
 </script>
 </body>

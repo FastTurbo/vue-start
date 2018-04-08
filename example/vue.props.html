@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue props</title>
+    <script src="../assets/vue.js"></script>
+</head>
+<body>
+<h1>vue组件props设置</h1>
+<hr>
+<div id="app">
+    <demo country="China" now-age="22" :name="name"></demo>
+</div>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            message:'Hello world!',
+            name:'Qiqi'
+        },
+        components:{
+            'demo':{
+                template:`
+                    <div style="color:red;">Panda comes from {{ country }},he is {{ nowAge }} years old,his name is {{ name }}</div>
+                `,
+                props:['country', 'nowAge', 'name']
+            }
+        }
+    })
+</script>
+</body>
+</html>

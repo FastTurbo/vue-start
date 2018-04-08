@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue父子组件</title>
+    <script src="../assets/vue.js"></script>
+</head>
+<body>
+<h1>vue父子组件交互</h1>
+<hr>
+<div id="app">
+    {{message}}
+    <parent></parent>
+</div>
+<script>
+    var parent = {
+        template:`
+            <div style="color:red">这里是父组件</div>
+        `
+    }
+    var app = new Vue({
+        el:'#app',
+        data:{
+            message:'Hello world!'
+        },
+        components:{
+            'parent':parent
+        }
+    })
+</script>
+</body>
+</html>
