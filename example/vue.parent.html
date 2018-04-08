@@ -10,21 +10,45 @@
 <hr>
 <div id="app">
     {{message}}
-    <parent></parent>
+    <component :is="who"></component>
 </div>
 <script>
+    var child = {
+        template:`
+            <div style="color:red">这里是一个子组件</div>
+        `
+    }
     var parent = {
         template:`
-            <div style="color:red">这里是父组件</div>
-        `
+            <div>
+                <p style="color:green;">这里是父组件</p>
+                <child></child>
+            </div>
+        `,
+        components:{
+            'child':child
+        }
+    }
+
+    var componentA = {
+        template:`<div style="color:red;">我是componentA组件。</div>`
+    }
+    var componentB = {
+        template:`<div style="color:green;">我是componentB组件。</div>`
+    }
+    var componentC= {
+        template:`<div style="color:blue;">我是componentC组件。</div>`
     }
     var app = new Vue({
         el:'#app',
         data:{
-            message:'Hello world!'
+            message:'Hello world!',
+            who:'componentA'
         },
         components:{
-            'parent':parent
+            'componentA':componentA,
+            'componentB':componentB,
+            'componentC':componentC
         }
     })
 </script>
