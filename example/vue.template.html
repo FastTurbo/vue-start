@@ -11,21 +11,18 @@
 <div id="app">
 </div>
 <template id="temp1">
-    <h2 style="color:yellowgreen">这里是template标签模版</h2>
+    <div style="color:red;">这里是template标签里面的template</div>
 </template>
 <script type="x-template" id="temp2">
-    <h2 style="color:red;">这里是script标签模板</h2>
+    <div style="color:blue;">这里是script标签里面的template</div>
 </script>
 <script>
     var app = new Vue({
         el:'#app',
         template:'#temp2'
-
-        //    `
-         //   <h2 style="color:green">这里是选项模版</h2>
-       // `
-
+        //template:`<div style="color:green;">这里是选项里面的template</div>`
     })
+
 </script>
 </body>
 </html>

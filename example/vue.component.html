@@ -11,24 +11,73 @@
 <div id="app">
  <demo></demo>
     <demo2></demo2>
+    <temp :name="name" :age="age"></temp>
+    <parent></parent>
+    <component :is="comp"></component>
+    <p><button @click="change">change</button></p>
 </div>
 <script>
-    Vue.component('demo',{
-        template:`
-            <div style="color:red;">这是全局组件demo</div>
-        `
-    })
+   Vue.component('demo',{
+        template:`<div style="color:red;">这里是全局组件，在任何一个Vue实例中都可以使用</div>`
+   })
+   var child = {
+       template:`<div>这里是child组件，必须要在父组件中注册才能使用呢！</div>`
+   }
+
+   var compA = {
+       template:`<div style="color:red;">compA</div>`
+   }
+   var compB = {
+       template:`<div style="color:green;">compB</div>`
+   }
+   var compC = {
+       template:`<div style="color:blue">comC</div>`
+   }
+
+
     var app = new Vue({
         el:'#app',
+        data:{
+            name:'panda',
+            age:33,
+            comp:'compA'
+
+        },
         components:{
             'demo2':{
-                template:`
-                    <div style="color:green;">这里是局部的组件demo2</div>
-                `
+                template:`<div style="color:green">这里是局部组件，只在当前Vue实例中才能使用</div>`
+            },
+            'temp':{
+                template:`<div style="color:green;">我是{{name}},今年{{age}}岁了。</div>`,
+                props:['name','age']
+            },
+
+            'parent':{
+                template:`<div>
+                    <p>这里是父组件，能否使用子组件，就看该子组件是否在父组件中注册</p>
+                    <child></child>
+                </div>`,
+                components:{
+                    'child':child
+                }
+            },
+            'compA':compA,
+            'compB':compB,
+            'compC':compC,
+
+        },
+        methods:{
+            change:function(){
+                if(this.comp === 'compA'){
+                    this.comp = 'compB'
+                }else if(this.comp === 'compB'){
+                    this.comp = 'compC'
+                }else{
+                    this.comp = 'compA'
+                }
             }
         }
     })
-
 </script>
 </body>
 </html>

@@ -19,19 +19,15 @@
 <script>
     var outData = {
         count:1,
-        //goods:'car'
-        arr:['foo','bar','far']
+        arr:['aa','bb','cc']
     }
-    var app = new Vue({
-        el:'#app',
-        data:outData
-
-    })
-
+   var app = new Vue({
+       el:'#app',
+       data:outData,
+   })
     function add(){
-        //Vue.set(outData,'count',2)
-        //outData.count++
-        Vue.set(app.arr,1,'ddd')
+        Vue.set(app.arr,1,'dd')
+
     }
 </script>
 </body>
