@@ -4,10 +4,12 @@ import HelloWorld from '@/components/HelloWorld'
 import Hi from '@/components/Hi'
 import Hi1 from '@/components/Hi1'
 import Hi2 from '@/components/Hi2'
+import Error from '@/components/Error'
 
 Vue.use(Router)
 
 export default new Router({
+  mode:'history',
   routes: [
     {
       path: '/',
@@ -18,6 +20,11 @@ export default new Router({
       path:'/hi/:newsId',
       name:'hi',
       component:Hi,
+      beforeEnter:function(to,from,next){
+        console.log(to)
+        console.log(from)
+        next();
+      }
     },
     {
       path:'/home',
@@ -31,6 +38,9 @@ export default new Router({
       name:'hi1',
       component:Hi1,
       alias:'/testHi1'
+    },{
+      path:'*',
+      component:Error
     }
 
   ]

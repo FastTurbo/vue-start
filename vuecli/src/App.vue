@@ -1,9 +1,13 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <transition name="fade">
+    <transition name="fade" mode="out-in">
       <router-view/>
     </transition>
+    <div>
+      <button @click="prev()">前进</button>
+      <button @click="back()">后退</button>
+    </div>
 
     <div>
       <router-link to="/">首页</router-link> |
@@ -20,7 +24,15 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods:{
+    prev(){
+      this.$router.go(1)
+    },
+    back(){
+      this.$router.go(-1)
+    }
+  }
 }
 </script>
 
@@ -33,4 +45,18 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+  .fade-enter{
+    opacity:0;
+  }
+  .fade-enter-active{
+    transition:opacity .5s;
+  }
+  .fade-leave{
+    opacity:1;
+  }
+  .fade-leave-active{
+    opacity:0;
+    transition:opacity .5s;
+  }
 </style>
