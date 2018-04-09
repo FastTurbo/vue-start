@@ -9,15 +9,35 @@
 <h1>Hello world</h1>
 <hr>
 <div id="app">
-   <comp></comp>
+   <comp>
+       <span slot="nameUrl">{{compData.name}}</span>
+       <span slot="age">{{compData.age}}</span>
+       <span slot="message">{{compData.message}}</span>
+   </comp>
 </div>
+<template id="comp">
+    <div>
+        <p>姓名：<slot name="nameUrl"></slot></p>
+        <p>年龄：<slot name="age"></slot></p>
+        <p>信息：<slot name="message"></slot></p>
+
+    </div>
+
+</template>
 <script>
     var app = new Vue({
         el:'#app',
         data:{
-            name:'zhangsan',
-            age:33,
-            message:'Hello world!'
+            compData: {
+                name: 'zhangsan',
+                age: 33,
+                message: 'Hello world!'
+            }
+        },
+        components:{
+            'comp':{
+                template:'#comp'
+            }
         }
     })
 </script>
