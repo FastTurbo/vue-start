@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue学习</title>
+    <script src="../assets/vue.js"></script>
+</head>
+<body>
+<h1>vue methods</h1>
+<hr>
+<div id="app">
+    {{num}}
+    <p><button @click="add(3,$event)">add</button></p>
+    <p><btn @click.native="add(2)"></btn></p>
+</div>
+<script>
+    var btn = {
+        template:`<button>组件Add</button>`
+    }
+    var app = new Vue({
+        el:'#app',
+        data:{
+            num:1
+        },
+        components:{
+            'btn':btn
+        },
+        methods:{
+            add:function(a,event){
+
+                if(a !== ''){
+                    this.num += a
+                }else{
+                    this.num++
+                }
+
+                console.log(event)
+
+            }
+        }
+    })
+</script>
+</body>
+</html>

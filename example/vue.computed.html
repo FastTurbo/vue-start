@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue学习</title>
+    <script src="../assets/vue.js"></script>
+</head>
+<body>
+<h1>vue computed计算属性</h1>
+<hr>
+<div id="app">
+    <p>{{ newPrice }}</p>
+    <ul>
+        <li v-for="item in reverseList">{{item.date}}:{{item.title}}</li>
+    </ul>
+</div>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            price:100,
+            newsList:[
+                {title:'aaaa',date:'2018-04-07'},
+                {title:'bbbb',date:'2018-04-08'},
+                {title:'cccc',date:'2018-04-08'},
+                {title:'dddd',date:'2018-04-09'}
+            ]
+        },
+        computed:{
+            newPrice:function(){
+                return '¥: ' + this.price + '元'
+            },
+            reverseList:function(){
+                return this.newsList.reverse()
+            }
+        }
+    })
+</script>
+</body>
+</html>

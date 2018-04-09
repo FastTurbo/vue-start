@@ -42,3 +42,5 @@
     在选项components中设置属性指向该组件
     注意父子组件，必须在父组件选项components中挂载子组件
     在component标签，使用:is来动态绑定不同的component组件
+    
+    native修饰符，让组件可以调用构造器的原始方法。：@click.native='app中的methods属性方法'
