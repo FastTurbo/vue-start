@@ -61,3 +61,25 @@
     
     vue-cli的用法：
     
+    
+    router
+    
+    router的内容会显示在router-view标签中
+    router-link标签用来设置路由，to属性设置要路由的页面
+    设置子路由的时候path属性值不需要带/符号！！！！
+    
+    子路由传值，要将to换成绑定形式:to=赋值一个对象，
+    name为路由中设置的name(router设置需加上name属性)
+    然后后面params收到的对象就是子路由可以接收的参数，
+    在子路由对应的组件中就可以通过$route.params.xxx获取参数
+    
+    多路由，即多个router-view情况下
+    路由的设置应为每个router-view配置组件
+    并在components中为每个router-view根据名字配置页面
+    
+    通过url传递参数，在路由配置中path后面使用冒号加上参数名称即可：path:'/index/:param'
+    然后在子组件中使用$route.params.xxx来获取参数
+    
+    重定向：在路由定义中设置redirect即可，带参数的，就带同样的参数就可以
+    
+    alias为路由起别名，注意：/根路由是不能起别名的
