@@ -9,13 +9,41 @@
 <h1>vue watch函数</h1>
 <hr>
 <div id="app">
-    {{message}}
+    <p>今日温度：{{ grade }}度</p>
+    <p>穿衣指数：{{ cloth }}</p>
+    <p><button @click="add">升高温度</button><button @click="down">降低温度</button></p>
 </div>
 <script>
     var app = new Vue({
         el:'#app',
         data:{
-            message:'Hello world!'
+            grade:10,
+            cloth:'夹克牛仔裤'
+        },
+        methods:{
+            add:function(){
+                this.grade++
+            },
+            down:function(){
+                this.grade--
+            }
+        },
+        /*watch:{
+            grade:function(n,o){
+                if(n>=20){
+                    this.cloth = '短裤背心'
+                }else{
+                    this.cloth = '夹克牛仔裤'
+                }
+            }
+        }*/
+    })
+
+    app.$watch('grade',function(n,o){
+        if(n>=20){
+            this.cloth = '短裤背心'
+        }else{
+            this.cloth = '夹克牛仔裤'
         }
     })
 </script>

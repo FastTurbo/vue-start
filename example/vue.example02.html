@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue学习</title>
+    <script src="../assets/vue.js"></script>
+    <script src="../assets/jquery.min.js"></script>
+</head>
+<body>
+<h1>vue example实例</h1>
+<hr>
+<div id="app">
+    {{ num }}
+
+    <p>
+        <button @click="add">add</button>
+    </p>
+</div>
+<p><button onclick="reduce()">destroy</button></p>
+<p><button onclick="reduceOnce()">reduce once</button></p>
+<script>
+   var app = new Vue({
+       el:'#app',
+       data:{
+           num:1
+       },
+       methods:{
+           add:function(){
+               this.num++
+           }
+       }
+   })
+
+   function reduce(){
+       app.$emit('reduce')
+   }
+    app.$on('reduce',function(){
+        this.num--
+    })
+
+   function reduceOnce(){
+       app.$emit('reduceOnce')
+   }
+    app.$once('reduceOnce',function(){
+        this.num -= 100
+    })
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue学习</title>
+    <script src="../assets/vue.js"></script>
+</head>
+<body>
+<h1>vue extends</h1>
+<hr>
+<div id="app">
+    {{ num }}
+    <p><button @click="add">add</button></p>
+</div>
+<script>
+    var extendOptions = {
+        updated:function(){
+            console.log('extends中的updated')
+        },
+        methods:{
+            add:function(){
+                this.num+= 5;
+            }
+        }
+
+    }
+    var app = new Vue({
+        el:'#app',
+        data:{
+            num:1
+        },
+        methods:{
+            add:function(){
+                this.num++
+            }
+        },
+        updated:function(){
+            console.log('原生构造器中的updated')
+        },
+        extends:extendOptions
+    })
+</script>
+</body>
+</html>

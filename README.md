@@ -44,3 +44,16 @@
     在component标签，使用:is来动态绑定不同的component组件
     
     native修饰符，让组件可以调用构造器的原始方法。：@click.native='app中的methods属性方法'
+    
+    在全局中定义的mixins方法最先执行，然后是mixins中的方法，然后才是构造函数的方法
+    mixins中的方法并不是覆盖的方法，而是与构造器中的相同方法一并执行，并且mixins中的方法比构造器里的方法优先执行。
+    
+    extends只能放一个，而mixins可以放一个数组，很多歌mixins对象
+    
+    
+    vue与第三方库一起使用：要注意生命周期
+    只有在mounted和update周期才能使用，因为这个阶段才能有dom
+    
+    $on在外部定义实例方法，在外部调用使用$emit来调用
+    $once定义只调用一次的方法
+    $off用来关闭方法

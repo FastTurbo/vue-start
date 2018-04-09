@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue学习</title>
+    <script src="../assets/vue.js"></script>
+    <script src="../assets/jquery.min.js"></script>
+</head>
+<body>
+<h1>vue example实例</h1>
+<hr>
+<div id="app">
+
+</div>
+<p><button onclick="destroy()">destroy</button></p>
+<p><button onclick="reload()">reload</button></p>
+<script>
+    var Vmodel = Vue.extend({
+        template:`<p>{{ message }}</p>`,
+        data:function(){
+            return {
+                message:'Hello ,world!'
+            }
+        },
+        mounted:function(){
+            console.log('mounted 创建！')
+        },
+        destroyed:function(){
+            console.log('mounted 销毁！')
+        },
+        updated:function(){
+            console.log('更新了')
+        }
+    })
+    var vm = new Vmodel().$mount('#app')
+
+    function destroy(){
+        vm.$destroy();
+    }
+    function reload(){
+        vm.$forceUpdate()
+    }
+</script>
+</body>
+</html>

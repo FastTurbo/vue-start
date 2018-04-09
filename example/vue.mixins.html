@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue学习</title>
+    <script src="../assets/vue.js"></script>
+</head>
+<body>
+<h1>vue mixins</h1>
+<hr>
+<div id="app">
+    {{num}}
+    <p><button @click="add">add</button></p>
+</div>
+<script>
+    var addConsole = {
+        updated(){
+            console.log('数据发生变化：' + this.num)
+        }
+    }
+    Vue.mixin({
+        updated:function(){
+            console.log('我是全局的mixins')
+        },
+        methods:{
+            add:function(){
+                this.num+= 5
+            }
+        }
+    })
+    var app = new Vue({
+        el:'#app',
+        data:{
+            num:1
+        },
+        methods:{
+            add:function(){
+                this.num++
+            }
+        },
+        updated:function(){
+            console.log('原生构造器上的updated执行了！')
+        },
+        mixins:[addConsole]
+
+    })
+</script>
+</body>
+</html>
