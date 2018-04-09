@@ -5,8 +5,9 @@
       <router-view/>
     </transition>
     <div>
-      <button @click="prev()">前进</button>
-      <button @click="back()">后退</button>
+      <button @click="prev">前进</button>
+      <button @click="back">后退</button>
+      <button @click="home">首页</button>
     </div>
 
     <div>
@@ -31,6 +32,9 @@ export default {
     },
     back(){
       this.$router.go(-1)
+    },
+    home(){
+      this.$router.push('/')
     }
   }
 }

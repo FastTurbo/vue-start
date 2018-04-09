@@ -86,6 +86,9 @@
     
     过渡效果，使用transition标签包住router-view
     name:fade过渡方式
+    四个关键类：-enter -enter-active -leave -leave-active
+    在-active中编写自己的过渡动画
+    
     mode:过渡模式
     
     路由中的mode，路径的模式
