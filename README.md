@@ -67,8 +67,11 @@
     router的内容会显示在router-view标签中
     router-link标签用来设置路由，to属性设置要路由的页面
     设置子路由的时候path属性值不需要带/符号！！！！
+    嵌套的路由，一定要在父路由组件上加上router-view!!!
     
     子路由传值，要将to换成绑定形式:to=赋值一个对象，
+    使用:to传递参数的时候，在json中应使用name属性来区分路由，否则参数不能传递过去
+    
     name为路由中设置的name(router设置需加上name属性)
     然后后面params收到的对象就是子路由可以接收的参数，
     在子路由对应的组件中就可以通过$route.params.xxx获取参数
