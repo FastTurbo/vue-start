@@ -12,6 +12,7 @@
 
     <div>
       <router-link to="/">首页</router-link> |
+      <router-link to="/count">计数</router-link> |
       <router-link to="/hi/3234">Hi页面</router-link> |
       <router-link to="/home">回到首页</router-link> |
       <router-link to="/hi2/4343">回到hi</router-link> |

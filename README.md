@@ -109,3 +109,16 @@
     钩子函数会停止路由的跳转，在函数末尾调用next()就会继续进行，或者在next()中添加path重定向。
     
     编程式导航，在实例中使用this.$router.go()传入1或-1来控制路由的前进或后退
+    
+    vuex
+    
+    状态：共有的属性。数据仓库，状态管理器，用在中大型项目中。
+    Vue.use(Vuex)注入vuex。
+    
+    暴露出state，项目中才能使用
+    mutations也需要暴露出来！！！
+    export default new Vuex.Store({state，mutations})
+    store引入后与data,methods同一级别使用，
+    
+    改变state中的值只能通过mutations来实现。！！！！
+    调用mutations中的方法只能通过commit来实现！！！！

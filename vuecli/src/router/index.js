@@ -5,6 +5,7 @@ import Hi from '@/components/Hi'
 import Hi1 from '@/components/Hi1'
 import Hi2 from '@/components/Hi2'
 import Error from '@/components/Error'
+import Count from '@/components/Count'
 
 Vue.use(Router)
 
@@ -38,6 +39,9 @@ export default new Router({
       name:'hi1',
       component:Hi1,
       alias:'/testHi1'
+    },{
+      path:'/count',
+      component:Count
     },{
       path:'*',
       component:Error
