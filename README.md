@@ -120,5 +120,16 @@
     export default new Vuex.Store({state，mutations})
     store引入后与data,methods同一级别使用，
     
+    state状态对象，一组状态对象
+    mutations改变state的一组函数
+    输出的时候用$store,有三种方法可以在使用state时候不需要写$store
+    使用计算属性computed可以实现不用$store,
+    1 computed使用$store时，要用this.$store
+    2 computed用mapState包住，其中写state=>state.count返回方法
+    3 computed用mapState包住，直接写数组就可以
+    
+    
+    
+    
     改变state中的值只能通过mutations来实现。！！！！
     调用mutations中的方法只能通过commit来实现！！！！
