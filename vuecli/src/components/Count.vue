@@ -18,15 +18,15 @@
             msg:'Hello Vuex'
           }
         },
-       /* computed:{
+       computed:{
           count(){
             return this.$store.state.count
           }
-        },*/
+        },
       /* computed:mapState({
          count:state => state.count
        }),*/
-      computed:mapState(['count']),
+      //computed:mapState(['count']),
 
       store
     }
