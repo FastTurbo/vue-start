@@ -147,3 +147,7 @@
     就像普通的方法一样，传递参数也像普通的方法一样就可以了。
     使用...mapMutations()将mutations暴露出来，这样在methods中
     就可以跟其他methods共存，...mapMutations()需要在第一行。
+    
+    getter，store数据获取前的一次再编辑，就像computed一样
+    在computed中使用getters,就像mutations一样
+    有mapGetters()方法
