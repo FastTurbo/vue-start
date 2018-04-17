@@ -10,24 +10,16 @@
 </template>
 
 <script>
-    import store from '@/vuex/store'
+    import store from '@/vuex/state'
     import { mapState } from 'vuex'
     export default {
-        data () {
+      name: "count",
+      data(){
           return {
-            msg:'Hello Vuex'
+            msg:'Hello world'
           }
-        },
-       /*computed:{
-          count(){
-            return this.$store.state.count
-          }
-        },*/
-       computed:mapState({
-         count:state => state.count
-       }),
-      //computed:mapState(['count']),
-
+      },
+      computed:mapState(['count']),
       store
     }
 </script>
