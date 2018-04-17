@@ -151,3 +151,6 @@
     getter，store数据获取前的一次再编辑，就像computed一样
     在computed中使用getters,就像mutations一样
     有mapGetters()方法
+    
+    actions异步修改state状态，mutations不同是同步修改状态
+    
