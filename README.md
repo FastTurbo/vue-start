@@ -127,6 +127,15 @@
     1 computed使用$store时，要用this.$store
     2 computed用mapState包住，其中写state=>state.count返回方法
     3 computed用mapState包住，直接写数组就可以
+    当组件中还有其他的computed计算属性时，就需要将mapState展开到computed对象
+    中，使用...可以进行展开
+    computed:{
+        ...mapState(['count','other']),
+        result(){
+            //...
+        }
+       }
+       ...mapState要写在第一行
     
     
     
