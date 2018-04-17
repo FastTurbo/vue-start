@@ -137,8 +137,13 @@
        }
        ...mapState要写在第一行
     
-    
-    
-    
     改变state中的值只能通过mutations来实现。！！！！
     调用mutations中的方法只能通过commit来实现！！！！
+    
+    使用mutations传参，就要像普通函数一样将参数传递，只不过在
+    定义mutations的时候，第一个参数是state,在调用mutations
+    的时候，第一个参数是mutations名字，后面的参数才是参数。
+    使用mapMutations将mutations注入到methods方法中，这样用起来
+    就像普通的方法一样，传递参数也像普通的方法一样就可以了。
+    使用...mapMutations()将mutations暴露出来，这样在methods中
+    就可以跟其他methods共存，...mapMutations()需要在第一行。
