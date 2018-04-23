@@ -7,12 +7,16 @@
         <button @click="add(10)">加</button>
         <button @click="reduce(5)">减</button>
       </p>
+      <p>
+        <button @click="addAction()">+</button>
+        <button @click="reduceAction()">-</button>
+      </p>
     </div>
 </template>
 
 <script>
     import store from '@/vuex/store'
-    import { mapState,mapMutations,mapGetters } from 'vuex'
+    import { mapState,mapMutations,mapGetters,mapActions } from 'vuex'
     export default {
       name: "count",
       data(){
@@ -30,6 +34,7 @@
       },
       methods:{
         ...mapMutations(['add','reduce']),
+        ...mapActions(['addAction','reduceAction']),
 
         results(){
           console.log(this.count)

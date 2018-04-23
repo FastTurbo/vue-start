@@ -153,4 +153,5 @@
     有mapGetters()方法
     
     actions异步修改state状态，mutations不同是同步修改状态
-    
+    actions中的方法参数是store，传入一个context上下文，可以在这个
+    上下文上引入mutations,或者获取到commit使用mutations
