@@ -1,13 +1,19 @@
 <template>
   <div id="app">
-
-    <router-view/>
+    <LeftNav></LeftNav>
+    <div class="main">
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <script>
+  import LeftNav from '@/components/common/LeftNav.vue'
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+    LeftNav
+  }
 }
 </script>
 
@@ -18,6 +24,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
+  #app .main{
+    width:95%;
+    float:left;
+    background-color: #EFF2F7;
+    height:100%;
+    overflow: auto;
+  }
 </style>
